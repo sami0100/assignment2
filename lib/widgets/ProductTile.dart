@@ -10,23 +10,40 @@ class ProductTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: EdgeInsets.all(10),
+      elevation: 3,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12),
+      ),
+      margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       child: ListTile(
-
-        leading: Container(
-          width: 100,
-          height: 100,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8),
-            image: DecorationImage(
-              image: AssetImage(product.imageUrl),
-              fit: BoxFit.contain,
-              alignment: Alignment.center,
-            ),
+        // Product Image
+        leading: ClipRRect(
+          borderRadius: BorderRadius.circular(8),
+          child: Image.asset(
+            product.imageUrl,
+            width: 60,
+            height: 60,
+            fit: BoxFit.cover,
           ),
         ),
-        title: Text(product.title),
-        subtitle: Text('\$${product.price}'),
+        // Product Title
+        title: Text(
+          product.title,
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 16,
+          ),
+        ),
+        // Product Price
+        subtitle: Text(
+          '\$${product.price}',
+          style: TextStyle(
+            color: Colors.green,  // Color accent for price
+            fontWeight: FontWeight.w600,
+            fontSize: 14,
+          ),
+        ),
+        // Navigate to Product Details
         onTap: () {
           Navigator.push(
             context,
