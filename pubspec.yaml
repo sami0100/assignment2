@@ -1,0 +1,31 @@
+name: assignment2
+description: A new Flutter project.
+
+# The following line prevents the package from being accidentally published to pub.dev.
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Add any other dependencies you are using here
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+
+  assets:
+
+    - assets/images/galaxys21.jpeg
+    - assets/images/iphone13.jpeg
+    - assets/images/macbookpro14.jpeg
+    - assets/images/sony_headphones.jpeg
+
